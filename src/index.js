@@ -84,8 +84,6 @@ const openPhotoSwipe = (gallery, curIndex, openTriggerEl) => {
 }
 
 const handleGalleryClick = gallery => e => {
-  e.preventDefault()
-
   /*
 * Go up the DOM tree until it finds
 * the clicked item (matches the itemSelector)
@@ -97,6 +95,7 @@ const handleGalleryClick = gallery => e => {
 
   // If the click didn't hit a gallery item, do nothing
   if (!currentItem) return
+  e.preventDefault()
 
   /*
 * Let's get the clicked item index.
