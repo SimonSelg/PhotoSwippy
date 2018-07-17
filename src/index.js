@@ -108,7 +108,7 @@ const handleGalleryClick = gallery => e => {
       ? el => selectorMatches(el, gallery.options.indexSelector)
       : el => el.parentNode === gallery.el
   )
-  const actualIndex = getElementIndex(indexItemEl)
+  const actualIndex = getElementIndex(indexItemEl, gallery.options.itemSelector)
   openPhotoSwipe(gallery, actualIndex, currentItem)
 }
 

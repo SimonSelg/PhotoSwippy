@@ -15,11 +15,11 @@ export const preloadImage = (url, onLoad, onError) => {
   tmpImg.src = url
 }
 /** Gets an element index relative to its siblings */
-export const getElementIndex = node => {
+export const getElementIndex = (node, itemSelector) => {
   let index = 0
-  while ((node = node.previousElementSibling)) {
-    ++index
-  }
+  while ((node = node.previousElementSibling))
+    if (itemSelector === null || node.querySelector(itemSelector))
+      ++index
   return index
 }
 
